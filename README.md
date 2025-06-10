@@ -98,13 +98,16 @@
 <div align="center">
 
 ### 🖥️ Desktop View
-![Desktop Homepage](https://via.placeholder.com/800x400/0066CC/FFFFFF?text=Desktop+Homepage)
+![Desktop Homepage](https://github.com/user-attachments/assets/3306265a-130c-44ac-a6ed-f7d90fcfd14f)
+
 
 ### 📱 Mobile View  
-![Mobile View](https://via.placeholder.com/300x600/FF6B35/FFFFFF?text=Mobile+View)
+![Mobile View](https://github.com/user-attachments/assets/bd6ba5ab-b425-4195-afa0-53e637de1387)
+
 
 ### 🛒 Product Catalog
-![Product Catalog](https://via.placeholder.com/800x400/28A745/FFFFFF?text=Product+Catalog)
+![Product Catalog](https://github.com/user-attachments/assets/15f4a745-3e2f-4f5b-afce-418e80ea8b0b)
+
 
 </div>
 
