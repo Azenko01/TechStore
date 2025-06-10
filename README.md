@@ -4,14 +4,13 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
   <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
 </div>
 
 <div align="center">
   <h3>🔥 Modern Electronics Store with Premium User Experience</h3>
   <p>Discover premium electronics with unbeatable prices and warranty</p>
   
-  [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-37a779?style=for-the-badge)](techstore-o.netlify.app)
+  [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-37a779?style=for-the-badge)](htt://techstore-o.netlify.app)
   [![GitHub Issues](https://img.shields.io/github/issues/Azenko01/TechStore?style=for-the-badge)](https://github.com/Azenko01/TechStore/issues)
   [![GitHub Stars](https://img.shields.io/github/stars/Azenko01/TechStore?style=for-the-badge)](https://github.com/Azenko01/TechStore/stargazers)
 </div>
