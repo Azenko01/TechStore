@@ -11,7 +11,7 @@
   <h3>🔥 Modern Electronics Store with Premium User Experience</h3>
   <p>Discover premium electronics with unbeatable prices and warranty</p>
   
-  [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-37a779?style=for-the-badge)](https://v0-technical-requirements-for-e-sto.vercel.app/index.html)
+  [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-37a779?style=for-the-badge)](techstore-o.netlify.app)
   [![GitHub Issues](https://img.shields.io/github/issues/Azenko01/TechStore?style=for-the-badge)](https://github.com/Azenko01/TechStore/issues)
   [![GitHub Stars](https://img.shields.io/github/stars/Azenko01/TechStore?style=for-the-badge)](https://github.com/Azenko01/TechStore/stargazers)
 </div>
@@ -151,7 +151,7 @@ code .
 
 ### 🌐 **Access the Application**
 - **Local:** `http://localhost:8000`
-- **Production:** [https://v0-technical-requirements-for-e-sto.vercel.app](https://v0-technical-requirements-for-e-sto.vercel.app/index.html)
+- **Production:** [https://v0-technical-requirements-for-e-sto.vercel.app](techstore-o.netlify.app)
 
 ---
 
@@ -303,23 +303,6 @@ npx live-server
 
 ---
 
-## 🚀 Deployment
-
-### 🌐 **Vercel Deployment**
-```bash
-# 1. Install Vercel CLI
-npm i -g vercel
-
-# 2. Login to Vercel
-vercel login
-
-# 3. Deploy
-vercel --prod
-
-# 4. Custom domain (optional)
-vercel domains add your-domain.com
-```
-
 ### 🔧 **Alternative Deployments**
 ```bash
 # GitHub Pages
@@ -334,37 +317,6 @@ vercel domains add your-domain.com
 firebase init hosting
 firebase deploy
 ```
-
----
-
-## 🛣️ Roadmap
-
-### 🎯 **Phase 1: Foundation** (Current)
-- [x] Basic e-commerce structure
-- [x] Product catalog display
-- [x] Responsive design basics
-- [x] Shopping cart functionality
-
-### 🚀 **Phase 2: Enhancement** (Next 1-2 months)
-- [ ] **User Authentication** - Login/Register system
-- [ ] **Payment Integration** - Stripe/PayPal checkout
-- [ ] **Advanced Search** - Filters and sorting
-- [ ] **Product Reviews** - Customer feedback system
-- [ ] **Wishlist Feature** - Save favorite products
-
-### 🎨 **Phase 3: Advanced Features** (3-6 months)
-- [ ] **Admin Dashboard** - Inventory management
-- [ ] **Order Tracking** - Real-time delivery updates
-- [ ] **AI Recommendations** - Personalized product suggestions
-- [ ] **Mobile App** - React Native or PWA
-- [ ] **Multi-language** - Internationalization support
-
-### 🔮 **Phase 4: Innovation** (6+ months)
-- [ ] **AR Product Preview** - Virtual product viewing
-- [ ] **Voice Search** - Speech-to-text search
-- [ ] **Chatbot Support** - AI customer service
-- [ ] **Cryptocurrency Payment** - Bitcoin/Ethereum support
-- [ ] **Social Commerce** - Social media integration
 
 ---
 
@@ -411,17 +363,14 @@ git push origin feature/amazing-feature
 ## 📞 Support & Contact
 
 ### 🆘 **Getting Help**
-- 📧 **Email:** [your-email@example.com]
+- 📧 **Email:** [azenko0609@gmail.com]
 - 💬 **Discord:** [Your Discord Server]
-- 🐛 **Issues:** [GitHub Issues](https://github.com/Azenko01/TechStore/issues)
 - 📖 **Documentation:** [Wiki](https://github.com/Azenko01/TechStore/wiki)
 
 ### 🌟 **Stay Connected**
 - ⭐ **Star this repo** if you find it helpful
 - 👀 **Watch** for updates and new releases
 - 🍴 **Fork** to create your own version
-- 🐦 **Follow** [@YourTwitter] for updates
-
 ---
 
 ## 📄 License
@@ -445,7 +394,7 @@ MIT License - Free for personal and commercial use
 - **Icons:** [Lucide Icons](https://lucide.dev)
 - **Fonts:** [Google Fonts](https://fonts.google.com)
 - **Images:** [Unsplash](https://unsplash.com)
-- **Hosting:** [Vercel](https://vercel.com)
+- **Hosting:** [Vercel](techstore-o.netlify.app)
 
 ### 🎯 **Built With Love**
 ```
