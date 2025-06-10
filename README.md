@@ -4,13 +4,14 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
   <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
 </div>
 
 <div align="center">
   <h3>🔥 Modern Electronics Store with Premium User Experience</h3>
   <p>Discover premium electronics with unbeatable prices and warranty</p>
   
-  [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-37a779?style=for-the-badge)](htt://techstore-o.netlify.app)
+  [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-37a779?style=for-the-badge)](https://techstore-o.netlify.app/)
   [![GitHub Issues](https://img.shields.io/github/issues/Azenko01/TechStore?style=for-the-badge)](https://github.com/Azenko01/TechStore/issues)
   [![GitHub Stars](https://img.shields.io/github/stars/Azenko01/TechStore?style=for-the-badge)](https://github.com/Azenko01/TechStore/stargazers)
 </div>
@@ -61,7 +62,7 @@
 
 ## 🚀 Demo
 
-🌐 **Live Website:** [https://v0-technical-requirements-for-e-sto.vercel.app](https://v0-technical-requirements-for-e-sto.vercel.app/index.html)
+🌐 **Live Website:** [https://techstore-o.netlify.app](https://techstore-o.netlify.app/)
 
 ### 📸 Quick Preview
 ```
@@ -82,7 +83,7 @@
 - **Responsive Design** - Mobile-first approach
 
 ### **Deployment & Hosting**
-- **Vercel** - Serverless deployment platform
+- **Netlify** - Modern web hosting platform
 - **GitHub** - Version control and collaboration
 - **Domain Management** - Custom domain configuration
 
@@ -150,7 +151,7 @@ code .
 
 ### 🌐 **Access the Application**
 - **Local:** `http://localhost:8000`
-- **Production:** [https://v0-technical-requirements-for-e-sto.vercel.app](techstore-o.netlify.app)
+- **Production:** [https://techstore-o.netlify.app](https://techstore-o.netlify.app/)
 
 ---
 
@@ -302,20 +303,65 @@ npx live-server
 
 ---
 
+## 🚀 Deployment
+
+### 🌐 **Netlify Deployment**
+```bash
+# 1. Install Netlify CLI
+npm install -g netlify-cli
+
+# 2. Login to Netlify
+netlify login
+
+# 3. Deploy to Netlify
+netlify deploy
+
+# 4. Deploy to production
+netlify deploy --prod
+
+# 5. Custom domain (optional)
+netlify domains:add your-domain.com
+```
+
 ### 🔧 **Alternative Deployments**
 ```bash
+# Vercel
+npm i -g vercel
+vercel --prod
+
 # GitHub Pages
 - Push to gh-pages branch
 - Enable GitHub Pages in repository settings
-
-# Netlify
-- Connect GitHub repository
-- Auto-deploy on push to main branch
 
 # Firebase Hosting
 firebase init hosting
 firebase deploy
 ```
+
+---
+
+## 🛣️ Roadmap
+
+### 🚀 **Phase 1: Enhancement** (Next 1-2 months)
+- [ ] **User Authentication** - Login/Register system
+- [ ] **Payment Integration** - Stripe/PayPal checkout
+- [ ] **Advanced Search** - Filters and sorting
+- [ ] **Product Reviews** - Customer feedback system
+- [ ] **Wishlist Feature** - Save favorite products
+
+### 🎨 **Phase 2: Advanced Features** (3-6 months)
+- [ ] **Admin Dashboard** - Inventory management
+- [ ] **Order Tracking** - Real-time delivery updates
+- [ ] **AI Recommendations** - Personalized product suggestions
+- [ ] **Mobile App** - React Native or PWA
+- [ ] **Multi-language** - Internationalization support
+
+### 🔮 **Phase 3: Innovation** (6+ months)
+- [ ] **AR Product Preview** - Virtual product viewing
+- [ ] **Voice Search** - Speech-to-text search
+- [ ] **Chatbot Support** - AI customer service
+- [ ] **Cryptocurrency Payment** - Bitcoin/Ethereum support
+- [ ] **Social Commerce** - Social media integration
 
 ---
 
@@ -364,12 +410,15 @@ git push origin feature/amazing-feature
 ### 🆘 **Getting Help**
 - 📧 **Email:** [azenko0609@gmail.com]
 - 💬 **Discord:** [Your Discord Server]
+- 🐛 **Issues:** [GitHub Issues](https://github.com/Azenko01/TechStore/issues)
 - 📖 **Documentation:** [Wiki](https://github.com/Azenko01/TechStore/wiki)
 
 ### 🌟 **Stay Connected**
 - ⭐ **Star this repo** if you find it helpful
 - 👀 **Watch** for updates and new releases
 - 🍴 **Fork** to create your own version
+- 🐦 **Follow** [@YourTwitter] for updates
+
 ---
 
 ## 📄 License
@@ -393,7 +442,7 @@ MIT License - Free for personal and commercial use
 - **Icons:** [Lucide Icons](https://lucide.dev)
 - **Fonts:** [Google Fonts](https://fonts.google.com)
 - **Images:** [Unsplash](https://unsplash.com)
-- **Hosting:** [Vercel](techstore-o.netlify.app)
+- **Hosting:** [Netlify](https://netlify.com)
 
 ### 🎯 **Built With Love**
 ```
