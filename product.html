@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - TechStore</title>
+    <meta name="description" content="View detailed specifications, reviews, and purchase options for this product.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html">TechStore</a></h1>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search products...">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <button class="cart-btn" onclick="openCart()">
+                        🛒 <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Details -->
+    <section class="product-details">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> > <a href="catalog.html">Catalog</a> > <span id="product-breadcrumb">Product</span>
+            </div>
+
+            <div class="product-content" id="product-content">
+                <!-- Product details will be loaded by JavaScript -->
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="showTab('description')">Description</button>
+                    <button class="tab-btn" onclick="showTab('specifications')">Specifications</button>
+                    <button class="tab-btn" onclick="showTab('reviews')">Reviews</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="description-tab" class="tab-pane active">
+                        <div id="product-description">
+                            <!-- Description will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div id="specifications-tab" class="tab-pane">
+                        <div id="product-specifications">
+                            <!-- Specifications will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div id="reviews-tab" class="tab-pane">
+                        <div class="reviews-section">
+                            <div class="reviews-summary">
+                                <div class="rating-overview">
+                                    <div class="average-rating">
+                                        <span class="rating-number">4.5</span>
+                                        <div class="stars">★★★★☆</div>
+                                        <span class="review-count">(128 reviews)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reviews-list">
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-name">John D.</div>
+                                        <div class="review-rating">★★★★★</div>
+                                        <div class="review-date">2024-01-15</div>
+                                    </div>
+                                    <div class="review-text">
+                                        Excellent product! Great build quality and performance. Highly recommended.
+                                    </div>
+                                </div>
+
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-name">Sarah M.</div>
+                                        <div class="review-rating">★★★★☆</div>
+                                        <div class="review-date">2024-01-10</div>
+                                    </div>
+                                    <div class="review-text">
+                                        Good value for money. Fast delivery and excellent customer service.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products">
+                <h2>Related Products</h2>
+                <div class="products-grid" id="related-products">
+                    <!-- Related products will be loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechStore</h3>
+                    <p>Your trusted partner for premium electronics and technology solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="catalog.html?category=smartphones">Smartphones</a></li>
+                        <li><a href="catalog.html?category=laptops">Laptops</a></li>
+                        <li><a href="catalog.html?category=tvs">TVs</a></li>
+                        <li><a href="catalog.html?category=audio">Audio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📧 info@techstore.com</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>📍 123 Tech Street, Digital City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Shopping Cart</h2>
+                <button class="close-btn" onclick="closeCart()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <h3>Total: $<span id="cart-total">0.00</span></h3>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeCart()">Continue Shopping</button>
+                <button class="btn-primary" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog - TechStore</title>
+    <meta name="description" content="Browse our complete catalog of electronics, smartphones, laptops, TVs, and tech accessories.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">TechStore</div>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1 class="logo-text">
+                        <a href="index.html">
+                            <span class="logo-icon">⚡</span>
+                            TechStore
+                        </a>
+                    </h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="nav desktop-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="catalog.html" class="nav-link active">Catalog</a></li>
+                        <li><a href="index.html#about" class="nav-link">About</a></li>
+                        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search products..." id="search-input">
+                        <button class="search-btn" onclick="searchProducts()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <button class="cart-btn" onclick="openCart()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 6H3m4 7v6a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-6"></path>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="mobile-nav" id="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="catalog.html" class="mobile-nav-link">Catalog</a></li>
+                    <li><a href="index.html#about" class="mobile-nav-link">About</a></li>
+                    <li><a href="index.html#contact" class="mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Catalog Hero -->
+    <section class="catalog-hero">
+        <div class="container">
+            <div class="catalog-hero-content">
+                <h1 class="catalog-title">Discover Amazing Tech</h1>
+                <p class="catalog-subtitle">Find the perfect gadgets that match your lifestyle</p>
+                
+                <!-- Quick Search -->
+                <div class="quick-search">
+                    <div class="search-box">
+                        <input type="text" placeholder="What are you looking for?" id="hero-search">
+                        <button onclick="performQuickSearch()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Popular Searches -->
+                    <div class="popular-searches">
+                        <span class="popular-label">Popular:</span>
+                        <div class="search-tags">
+                            <button class="search-tag" onclick="quickFilter('smartphones')">iPhone</button>
+                            <button class="search-tag" onclick="quickFilter('laptops')">MacBook</button>
+                            <button class="search-tag" onclick="quickFilter('audio')">AirPods</button>
+                            <button class="search-tag" onclick="quickFilter('gaming')">Gaming</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="catalog-main">
+        <div class="container">
+            <div class="catalog-layout">
+                <!-- Modern Filters Sidebar -->
+                <aside class="filters-panel">
+                    <div class="filters-header">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46 22,3"></polygon>
+                            </svg>
+                            Filters
+                        </h3>
+                        <button class="clear-filters-btn" onclick="clearFilters()">Clear All</button>
+                    </div>
+                    
+                    <!-- Category Filter -->
+                    <div class="filter-section">
+                        <h4 class="filter-title">
+                            <span>Categories</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </h4>
+                        <div class="filter-content">
+                            <div class="category-grid">
+                                <label class="category-option">
+                                    <input type="radio" name="category" value="all" checked>
+                                    <div class="category-card">
+                                        <div class="category-icon">🛍️</div>
+                                        <span>All Products</span>
+                                        <div class="category-count">1000+</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="category-option">
+                                    <input type="radio" name="category" value="smartphones">
+                                    <div class="category-card">
+                                        <div class="category-icon">📱</div>
+                                        <span>Smartphones</span>
+                                        <div class="category-count">250+</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="category-option">
+                                    <input type="radio" name="category" value="laptops">
+                                    <div class="category-card">
+                                        <div class="category-icon">💻</div>
+                                        <span>Laptops</span>
+                                        <div class="category-count">180+</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="category-option">
+                                    <input type="radio" name="category" value="tvs">
+                                    <div class="category-card">
+                                        <div class="category-icon">📺</div>
+                                        <span>Smart TVs</span>
+                                        <div class="category-count">120+</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="category-option">
+                                    <input type="radio" name="category" value="audio">
+                                    <div class="category-card">
+                                        <div class="category-icon">🎧</div>
+                                        <span>Audio</span>
+                                        <div class="category-count">200+</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="category-option">
+                                    <input type="radio" name="category" value="gaming">
+                                    <div class="category-card">
+                                        <div class="category-icon">🎮</div>
+                                        <span>Gaming</span>
+                                        <div class="category-count">150+</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="category-option">
+                                    <input type="radio" name="category" value="accessories">
+                                    <div class="category-card">
+                                        <div class="category-icon">🔌</div>
+                                        <span>Accessories</span>
+                                        <div class="category-count">300+</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price Range Filter -->
+                    <div class="filter-section">
+                        <h4 class="filter-title">
+                            <span>Price Range</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </h4>
+                        <div class="filter-content">
+                            <div class="price-filter">
+                                <div class="price-inputs">
+                                    <div class="price-input-group">
+                                        <label>Min</label>
+                                        <input type="number" id="price-min-input" value="0" min="0" max="5000">
+                                    </div>
+                                    <div class="price-separator">-</div>
+                                    <div class="price-input-group">
+                                        <label>Max</label>
+                                        <input type="number" id="price-max-input" value="5000" min="0" max="5000">
+                                    </div>
+                                </div>
+                                
+                                <div class="price-slider">
+                                    <div class="slider-track">
+                                        <div class="slider-range" id="slider-range"></div>
+                                    </div>
+                                    <input type="range" id="price-min" min="0" max="5000" value="0" class="slider-thumb slider-thumb-min">
+                                    <input type="range" id="price-max" min="0" max="5000" value="5000" class="slider-thumb slider-thumb-max">
+                                </div>
+                                
+                                <div class="price-presets">
+                                    <button class="price-preset" onclick="setPriceRange(0, 500)">Under $500</button>
+                                    <button class="price-preset" onclick="setPriceRange(500, 1000)">$500 - $1000</button>
+                                    <button class="price-preset" onclick="setPriceRange(1000, 2000)">$1000 - $2000</button>
+                                    <button class="price-preset" onclick="setPriceRange(2000, 5000)">$2000+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Brand Filter -->
+                    <div class="filter-section">
+                        <h4 class="filter-title">
+                            <span>Brands</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </h4>
+                        <div class="filter-content">
+                            <div class="brand-search">
+                                <input type="text" placeholder="Search brands..." id="brand-search">
+                            </div>
+                            <div class="brand-list">
+                                <label class="brand-option">
+                                    <input type="checkbox" value="apple">
+                                    <div class="brand-card">
+                                        <div class="brand-logo">🍎</div>
+                                        <span>Apple</span>
+                                        <div class="brand-count">45</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="brand-option">
+                                    <input type="checkbox" value="samsung">
+                                    <div class="brand-card">
+                                        <div class="brand-logo">📱</div>
+                                        <span>Samsung</span>
+                                        <div class="brand-count">38</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="brand-option">
+                                    <input type="checkbox" value="sony">
+                                    <div class="brand-card">
+                                        <div class="brand-logo">🎵</div>
+                                        <span>Sony</span>
+                                        <div class="brand-count">29</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="brand-option">
+                                    <input type="checkbox" value="lg">
+                                    <div class="brand-card">
+                                        <div class="brand-logo">📺</div>
+                                        <span>LG</span>
+                                        <div class="brand-count">22</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="brand-option">
+                                    <input type="checkbox" value="dell">
+                                    <div class="brand-card">
+                                        <div class="brand-logo">💻</div>
+                                        <span>Dell</span>
+                                        <div class="brand-count">31</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="brand-option">
+                                    <input type="checkbox" value="hp">
+                                    <div class="brand-card">
+                                        <div class="brand-logo">🖥️</div>
+                                        <span>HP</span>
+                                        <div class="brand-count">27</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rating Filter -->
+                    <div class="filter-section">
+                        <h4 class="filter-title">
+                            <span>Customer Rating</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </h4>
+                        <div class="filter-content">
+                            <div class="rating-options">
+                                <label class="rating-option">
+                                    <input type="radio" name="rating" value="0">
+                                    <div class="rating-card">
+                                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                                        <span>All Ratings</span>
+                                    </div>
+                                </label>
+                                
+                                <label class="rating-option">
+                                    <input type="radio" name="rating" value="4">
+                                    <div class="rating-card">
+                                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                                        <span>4+ Stars</span>
+                                    </div>
+                                </label>
+                                
+                                <label class="rating-option">
+                                    <input type="radio" name="rating" value="3">
+                                    <div class="rating-card">
+                                        <div class="stars">⭐⭐⭐⭐</div>
+                                        <span>3+ Stars</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Apply Filters Button -->
+                    <div class="filter-actions">
+                        <button class="apply-filters-btn" onclick="applyFilters()">
+                            <span>Apply Filters</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- Products Area -->
+                <main class="products-main">
+                    <!-- Toolbar -->
+                    <div class="products-toolbar">
+                        <div class="toolbar-left">
+                            <div class="results-info">
+                                <span class="results-count" id="results-count">0</span>
+                                <span class="results-text">products found</span>
+                            </div>
+                            
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid" onclick="changeView('grid')">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="14" width="7" height="7"></rect>
+                                        <rect x="3" y="14" width="7" height="7"></rect>
+                                    </svg>
+                                </button>
+                                <button class="view-btn" data-view="list" onclick="changeView('list')">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="toolbar-right">
+                            <div class="sort-dropdown">
+                                <select id="sort-select" onchange="sortProducts()">
+                                    <option value="featured">Featured</option>
+                                    <option value="name">Name A-Z</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="rating">Highest Rated</option>
+                                    <option value="newest">Newest First</option>
+                                </select>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6,9 12,15 18,9"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-container">
+                        <div class="products-grid" id="catalog-products">
+                            <!-- Products will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination-container">
+                        <div class="pagination" id="pagination">
+                            <!-- Pagination will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>⚡ TechStore</h3>
+                        <p>Your trusted partner for premium electronics and technology solutions.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="#support">Support</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="catalog.html?category=smartphones">Smartphones</a></li>
+                        <li><a href="catalog.html?category=laptops">Laptops</a></li>
+                        <li><a href="catalog.html?category=tvs">Smart TVs</a></li>
+                        <li><a href="catalog.html?category=audio">Audio</a></li>
+                        <li><a href="catalog.html?category=gaming">Gaming</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>info@techstore.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>123 Tech Street, Digital City</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 TechStore. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-backdrop" onclick="closeCart()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Shopping Cart</h2>
+                <button class="modal-close" onclick="closeCart()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items"></div>
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        <span class="total-label">Total:</span>
+                        <span class="total-amount">$<span id="cart-total">0.00</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary" onclick="closeCart()">Continue Shopping</button>
+                <button class="btn primary" onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" onclick="scrollToTop()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"></path>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
